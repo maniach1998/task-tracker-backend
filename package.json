@@ -1,0 +1,38 @@
+{
+  "name": "task-tracker-backend",
+  "version": "1.0.0",
+  "description": "Nooro task tracker backend with Express.js Typescript + Prisma and MySQL",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts --watch src/**/*.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write .",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate:dev": "prisma migrate dev",
+    "prisma:migrate": "prisma migrate deploy",
+    "prisma:db:push": "prisma db push"
+  },
+  "author": "Manas Acharekar",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "@typescript-eslint/eslint-plugin": "^8.18.1",
+    "@typescript-eslint/parser": "^8.18.1",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "prisma": "^6.1.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.2"
+  }
+}
