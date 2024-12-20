@@ -10,7 +10,22 @@ export const createTaskSchema = z.object({
   color: z
     .string()
     .transform((color) => color.trim())
-    .refine((color) => /^[a-fA-F0-9]{6}$/.test(color), {
+    .refine((color) => /^#[a-fA-F0-9]{6}$/.test(color), {
       message: 'Color should be a valid hex color code',
+    }),
+});
+
+export const editTaskSchema = z.object({
+  title: createTaskSchema.shape.title,
+  color: createTaskSchema.shape.color,
+  completed: z.boolean(),
+});
+
+export const taskIdSchema = z.object({
+  id: z
+    .string()
+    .transform((id) => id.trim())
+    .refine((id) => id.length > 0, {
+      message: 'Task ID is required',
     }),
 });

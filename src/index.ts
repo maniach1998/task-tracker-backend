@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 // logging middleware
 app.use('*', (req: Request, res: Response, next: NextFunction) => {
   console.log(
-    `[server]: ${req.method} ${req.originalUrl} (${new Date().toISOString()})`
+    `[server]: ${res.statusCode} ${req.method} ${req.originalUrl} (${new Date().toISOString()})`
   );
   next();
 });
